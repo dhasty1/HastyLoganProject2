@@ -1,0 +1,40 @@
+<%- include('../partials/header.ejs') %>
+    <main>
+        <div class="container-fluid">
+            <div class="event-title">
+                <%= event.title%>
+                    <span class="edit-delete-container">
+                        <form id="editForm">
+                            <button type="submit" formmethod="GET" formaction="/events/<%= event.id%>/edit" id="edit">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                            <button type="submit" formmethod="POST" formaction="/events/<%= event.id%>?_method=DELETE"
+                                id="delete">
+                                <i class="fa-sharp fa-solid fa-trash"></i>
+                            </button>
+                        </form>
+                    </span>
+            </div>
+            <small>Posted <%=event.updated%> by <%= event.host%></small>
+            <img class="event-image" src="<%= event.image %>" alt="">
+            <p class="event-details">
+                <span class="event-detail-heading">Host:</span>
+                <%= event.host%> <br>
+                    <span class="event-detail-heading">Category:</span>
+                    <%= event.category%> <br>
+                        <span class="event-detail-heading">Start:</span>
+                        <%= formattedStart%> <br>
+                            <span class="event-detail-heading">End:</span>
+                            <%= formattedEnd%> <br>
+                                <span class="event-detail-heading">Location:</span>
+                                <%= event.location%><br>
+                                    <span class="event-detail-heading">Details:</span> <br>
+            </p>
+            <div class="full-details-container">
+                <p class="event-details-narrative">
+                    <%= event.details%>
+                </p>
+            </div>
+        </div>
+    </main>
+    <%- include('../partials/footer.ejs') %>

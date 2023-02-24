@@ -1,0 +1,52 @@
+<%- include('../partials/header.ejs')%>
+    <div class="container-fluid home">
+
+        <form method="POST" action="/events/<%= event.id%>?_method=PUT" id="event-form" enctype="multipart/form-data">
+            <div class="form-category">
+                <label for="category">Category </label>
+                <select name="category" id="category" form="event-form" required>
+                    <option value="">--Select a Category--</option>
+                   <% categories.forEach(category => { %>
+                     <% if(event.category === category){ %>
+                        <option value="<%= category%>" selected><%= category%></option>
+                     <% } else { %>
+                        <option value="<%= category%>"><%= category%></option>
+                     <% }; %>
+                   <% }); %>
+                </select>
+            </div>
+            <div class="form-title">
+                <label for="title">Title </label>
+                <input type="text" value="<%= event.title%>" name="title" required>
+            </div>
+            <div class="form-host">
+                <label for="host">Host</label>
+                <input type="text" id="host" name="host" value="<%= event.host%>">
+            </div>
+            <div class="form-details">
+                <label for="details">Description </label>
+                <textarea name="details" placeholder="Details" rows="3" cols="23" required><%= event.details%></textarea>
+            </div>
+            <div class="form-where">
+                <label for="location">Location </label>
+                <input type="text" value="<%= event.location%>" name="location" id="location" required>
+            </div>
+            <div class="form-start">
+                <label for="start">Start </label>
+                <input id="start" type="datetime-local" name="start" value="<%= event.start%>" required>
+            </div>
+            <div class="form-end">
+                <label for="end">End </label>
+                <input id="end" type="datetime-local" name="end" value="<%= event.end%>" required>
+            </div>
+            <div class="form-image">
+                <label for="IMG">Image </label>
+                <input type="file" name="IMG" required>
+            </div>
+            <div class="form-submit">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+
+    </div>
+    <%- include('../partials/footer.ejs') %>

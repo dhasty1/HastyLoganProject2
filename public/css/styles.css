@@ -1,0 +1,326 @@
+:root {
+    --palette-dark: #211F23;
+    --palette-light-teal: #2e686f;
+    --palette-brown: #4E4741;
+    --palette-dark-teal: #0D5F71;
+    --palette-white: #FFFFFF;
+}
+
+header {
+    background-color: var(--palette-light-teal);
+    font-family: 'Lobster', sans-serif;
+    font-size: 1.25rem;
+}
+
+.home,
+.events-container {
+    justify-content: center;
+    display: block;
+}
+
+.welcome,
+.event-category {
+    display: block;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.home-page-image {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.intro,
+.event {
+    display: block;
+    margin: 2rem 8rem 1rem 8rem;
+}
+
+small {
+    display:block;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 1rem;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+#headerLogo {
+    width: 200px;
+    margin-left: 1rem;
+    display: block;
+}
+
+.custom-toggler.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url(/images/hamburger-menu.png);
+    border:none;
+}
+
+#siteNav {
+    padding-bottom: 5px;
+}
+
+.nav-link {
+    color: var(--palette-white);
+    align-items: center;
+}
+
+.nav-link:hover {
+    color: var(--palette-dark)
+}
+
+.menu-item {
+    justify-content: center;
+}
+
+hr {
+    color: var(--palette-white);
+    margin: 8px 0px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    background-color: var(--palette-light-teal);
+    padding: 10px;
+    min-height: 50px;
+    width: 100%;
+    margin-top: 5rem;
+    overflow: hidden;
+    color: var(--palette-white);
+    font-family: 'Lobster', sans-serif;
+}
+
+.footerNav {
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.footer-item {
+    list-style: none;
+    display: inline-flex;
+    margin-right: 2em;
+    flex-direction: row;
+}
+
+.icons,
+footer {
+    text-align: center;
+}
+
+i {
+    padding: 0 0.25rem;
+}
+
+.event-category,
+.event-link {
+    margin-top: 2rem;
+}
+
+h1,
+.event-title,
+.event-detail-heading {
+    font-family: 'Lobster', sans-serif;
+}
+
+.event-detail-heading {
+    font-size: large;
+}
+
+.event-link {
+    font-family: 'Open Sans', sans-serif;
+    display: block;
+    padding: 0 8rem;
+    text-align: center;
+}
+
+.event-link:link {
+    text-decoration: none;
+    color: var(--palette-dark);
+}
+
+#edit,
+#delete {
+    text-decoration: none;
+    border:none;
+    color: var(--palette-dark-teal);
+    background-color: transparent;
+}
+
+.edit-delete-container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 1rem 0;
+    text-align: center;
+    display: block;
+    font-size: large;
+}
+
+.socials:link {
+    text-decoration: none;
+    color: var(--palette-white)
+}
+
+.event-link:hover {
+    color: var(--palette-dark-teal);
+    font-weight: 700;
+}
+
+.event-link:active,
+.event-link:visited {
+    text-decoration: none;
+    color: var(--palette-dark);
+}
+
+.socials:active,
+.socials:visited {
+    text-decoration: none;
+    color: var(--palette-white);
+}
+
+.event-title {
+    display: block;
+    font-size: xx-large;
+    text-align: center;
+    margin: 2rem 0 1rem 0;
+}
+
+.event-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.event-details {
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.event-details-narrative {
+    margin-left: 3rem;
+    margin-right: 2rem;
+}
+
+form {
+    margin-top: 5rem;
+    margin-left: 25%;
+    justify-content: center;
+  }
+
+#editForm {
+    margin:0;
+    padding: 0;
+    display:inline-block;
+}
+
+#details-label, label {
+    width: 15%;
+    margin-bottom: 2.5rem;
+    display:inline-block;
+    font-family: 'Lobster', sans-serif;
+}
+textarea, input, select {
+    vertical-align: middle;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.form-submit input {
+    width: 75%;
+    font-family: 'Lobster', sans-serif;
+    color: var(--palette-white);
+    background-color: var(--palette-light-teal);
+}
+
+
+/* Media Queries */
+
+@media(min-width: 62rem) {
+    #siteNav {
+        justify-content: left !important;
+        margin-left: 1rem;
+    }
+
+    .icons {
+        display: inline-flex;
+        float: right;
+        margin-right: 2rem;
+        margin-top: 1rem;
+    }
+
+    footer {
+        text-align: start;
+    }
+
+    .event-image {
+        display: block;
+        margin-right: 2rem;
+        margin-left: 2rem;
+        margin-top: 0.5rem;
+        float: left;
+        width: 20rem;
+    }
+
+    .event-details {
+        overflow: hidden;
+        padding-left: 2rem;
+    }
+
+    .event-details-narrative {
+        margin-left: 5rem;
+        margin-right: 20rem;
+    }
+
+    .full-details-container{
+        width: 75%;
+        margin-left: 22rem;
+    }
+
+    .event-title {
+        text-align: left;
+        font-size: xx-large;
+        display: block;
+        margin-bottom: 2rem;
+        margin-left: 1rem;
+    }
+
+    .edit-delete-container {
+        margin-left: 2rem;
+        font-size: large;
+        text-align: center;
+        display: inline;
+    }
+
+    small {
+        display:block;
+        text-align: left;
+        font-style: italic;
+        margin-left: 4rem;
+        margin-bottom: 1rem;
+        font-family: 'Open Sans', sans-serif;
+    
+    }
+}
