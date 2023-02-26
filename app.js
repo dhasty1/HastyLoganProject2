@@ -12,7 +12,7 @@ const app = express();
 // configure app
 let port = process.env.PORT || 3000;
 let host = 'localhost';
-app.set('view engine', 'ejs');
+app.set('view engine', require('ejs').___express);
 
 // mount middleware
 app.use(express.static('public'));
