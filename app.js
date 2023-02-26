@@ -12,7 +12,7 @@ const app = express();
 // configure app
 let port = process.env.PORT || 3000;
 let host = 'localhost';
-app.set('view engine', require('ejs').___express);
+app.set('view engine', 'ejs');
 
 // mount middleware
 app.use(express.static('public'));
@@ -41,8 +41,12 @@ app.use((err, req, res, next) => {
         err.message = ("Internal Server Error");
     }
 
-    res.status(err.status);
-    res.render('error', {error: err});
+    res.status(err.status || 500);
+    // res.render('error', {error: err});
+    res.json({
+        message: err.message,
+        error: err
+    });
 })
 
 // start the server
