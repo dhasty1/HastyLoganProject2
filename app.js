@@ -5,6 +5,7 @@ const eventRoutes = require('./routes/eventRoutes');
 const mainRoutes = require('./routes/mainRoutes');
 const methodOverride = require('method-override');
 const fileUpload = require('./middleware/fileUpload');
+const path = require("path");
 
 // create application
 const app = express();
@@ -13,6 +14,7 @@ const app = express();
 let port = process.env.PORT || 3000;
 let host = 'localhost';
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, './views'));
 
 // mount middleware
 app.use(express.static('public'));
@@ -22,7 +24,7 @@ app.use(methodOverride('_method'));
 
 // set up routes
 app.get('/', (req, res)=>{
-    res.render('index');
+    res.render('index', {});
 })
 
 app.use('/events', eventRoutes);
